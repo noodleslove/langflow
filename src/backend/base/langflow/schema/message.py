@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from typing import Annotated, Any, Literal
 from uuid import UUID
 
-from backend.base.langflow.schema.video import get_video_frames, is_video_file
+from langflow.schema.video import get_video_frames, is_video_file
 from fastapi.encoders import jsonable_encoder
 from langchain_core.load import load
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
