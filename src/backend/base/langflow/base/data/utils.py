@@ -35,7 +35,7 @@ TEXT_FILE_TYPES = [
 
 IMG_FILE_TYPES = ["jpg", "jpeg", "png", "bmp", "image"]
 
-VIDEO_FILE_TYPES = ["mp4"]
+VIDEO_FILE_TYPES = ["mp4", "mov", "avi", "mkv", "webm"]
 
 
 def normalize_text(text):
