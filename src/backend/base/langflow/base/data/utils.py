@@ -35,6 +35,8 @@ TEXT_FILE_TYPES = [
 
 IMG_FILE_TYPES = ["jpg", "jpeg", "png", "bmp", "image"]
 
+VIDEO_FILE_TYPES = ["mp4"]
+
 
 def normalize_text(text):
     return unicodedata.normalize("NFKD", text)

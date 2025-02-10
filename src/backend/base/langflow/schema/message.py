@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from typing import Annotated, Any, Literal
 from uuid import UUID
 
+from backend.base.langflow.schema.video import get_video_frames, is_video_file
 from fastapi.encoders import jsonable_encoder
 from langchain_core.load import load
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
@@ -200,6 +201,9 @@ class Message(Data):
         for file in files:
             if isinstance(file, Image):
                 content_dicts.append(file.to_content_dict())
+            elif is_video_file(file):
+                urls = get_video_frames(file)
+                content_dicts.extend([{"type": "image_url", "image_url": {"url": url}} for url in urls])
             else:
                 image_url = create_data_url(file)
                 content_dicts.append({"type": "image_url", "image_url": {"url": image_url}})
