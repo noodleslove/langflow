@@ -1,4 +1,4 @@
-from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES, VIDEO_FILE_TYPES
+from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES
 from langflow.base.io.chat import ChatComponent
 from langflow.inputs import BoolInput
 from langflow.io import (
@@ -62,7 +62,7 @@ class ChatInput(ChatComponent):
         FileInput(
             name="files",
             display_name="Files",
-            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES + VIDEO_FILE_TYPES,
+            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,
             info="Files to be sent with the message.",
             advanced=True,
             is_list=True,
