@@ -3,7 +3,7 @@ services:
   - type: web
     name: langflow
     runtime: docker
-    dockerfilePath: ./docker/build_and_push.Dockerfile
+    dockerfilePath: ./docker/render.Dockerfile
     repo: https://github.com/noodleslove/langflow
     branch: dev
     plan: standard
