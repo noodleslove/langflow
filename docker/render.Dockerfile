@@ -1,3 +1,3 @@
 FROM noodleslove/langflow:latest
 
-ENTRYPOINT ["langflow", "run"]
+CMD ["langflow", "run"]
