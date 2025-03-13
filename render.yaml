@@ -3,7 +3,7 @@ services:
   - type: web
     name: langflow
     runtime: docker
-    dockerfilePath: ./docker/cdk.Dockerfile
+    dockerfilePath: ./docker/dev.Dockerfile
     repo: https://github.com/noodleslove/langflow
     branch: dev
     plan: standard
@@ -18,7 +18,7 @@ services:
         value: 0.0.0.0
       - key: LANGFLOW_PORT
         # default render port https://docs.render.com/web-services#port-binding
-        value: 10000
+        value: 7860
       - key: LANGFLOW_LOG_LEVEL
         value: INFO
       - key: LANGFLOW_OPEN_BROWSER

@@ -10,6 +10,10 @@ RUN apt-get update \
     curl \
     npm \
     git \
+    # postgres
+    libpq5 \
+    libpq-dev \
+    postgresql-client \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
