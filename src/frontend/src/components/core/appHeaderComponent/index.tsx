@@ -85,6 +85,19 @@ export default function AppHeader(): JSX.Element {
         className={`z-30 flex items-center gap-2`}
         data-testid="header_right_section_wrapper"
       >
+        <ShadTooltip content="Go to my Portfolio" side="bottom" styleClasses="z-10">
+          <Button
+            variant="ghost"
+            className="flex text-sm font-medium"
+            onClick={() => window.open("https://eddieho.xyz", "_blank")}
+          >
+            <ForwardedIconComponent
+              name="handshake"
+              className="side-bar-button-size h-[18px] w-[18px]"
+            />
+            <span className="hidden whitespace-nowrap">Portfolio</span>
+          </Button>
+        </ShadTooltip>
         <AlertDropdown
           notificationRef={notificationContentRef}
           onClose={() => setActiveState(null)}
