@@ -3,7 +3,7 @@ services:
   - type: web
     name: langflow
     runtime: docker
-    dockerfilePath: ./docker/render.Dockerfile
+    dockerfilePath: ./docker/cdk.Dockerfile
     repo: https://github.com/noodleslove/langflow
     branch: dev
     plan: standard

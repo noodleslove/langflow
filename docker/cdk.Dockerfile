@@ -21,5 +21,6 @@ RUN poetry config virtualenvs.create false && poetry install --no-interaction --
 
 RUN poetry add botocore
 RUN poetry add pymysql
+RUN poetry add psycopg2-binary
 
 CMD ["sh", "./container-cmd-cdk.sh"]
