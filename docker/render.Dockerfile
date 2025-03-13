@@ -1,3 +1,3 @@
-FROM langflowai/langflow:latest
+FROM noodleslove/langflow:latest
 
-ENTRYPOINT ["python", "-m", "langflow", "run"]
+ENTRYPOINT ["langflow", "run"]

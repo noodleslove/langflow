@@ -4,14 +4,16 @@ services:
     name: langflow
     runtime: docker
     dockerfilePath: ./docker/render.Dockerfile
-    repo: https://github.com/langflow-ai/langflow
-    branch: main
+    repo: https://github.com/noodleslove/langflow
+    branch: dev
     plan: standard
     healthCheckPath: /health_check
     autoDeploy: false
     envVars:
       - key: LANGFLOW_DATABASE_URL
-        value: sqlite:////app/data/.cache/langflow/langflow.db
+        fromDatabase:
+          name: langflow-db
+          property: connectionString
       - key: LANGFLOW_HOST
         value: 0.0.0.0
       - key: LANGFLOW_PORT
@@ -19,6 +21,27 @@ services:
         value: 10000
       - key: LANGFLOW_LOG_LEVEL
         value: INFO
+      - key: LANGFLOW_OPEN_BROWSER
+        value: false
+      - key: LANGFLOW_REMOVE_API_KEYS
+        value: true
+      - key: LANGFLOW_AUTO_LOGIN
+        value: false
+      - key: LANGFLOW_SUPERUSER
+        sync: false
+      - key: LANGFLOW_SUPERUSER_PASSWORD
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_HOST
+        sync: false
     disk:
       name: langflow-data
       mountPath: /app/data
+databases:
+  - name: langflow-db
+    plan: basic-256mb
+    databaseName: langflow
+    user: langflow
