@@ -29,7 +29,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=src/backend/base/pyproject.toml,target=src/backend/base/pyproject.toml \
     uv sync --frozen --no-install-project --no-dev --extra postgresql
 
-EXPOSE 7860
+EXPOSE 10000
 EXPOSE 3000
 
 CMD ["./docker/dev.start.sh"]
